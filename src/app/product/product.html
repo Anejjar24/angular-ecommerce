@@ -15,18 +15,21 @@
 
 
       </thead>
-      <tbody *ngIf="products">
-        @for (p of products;track p){
-          <tr>
-            <td>{{p.id}}</td>
-            <td>{{p.name}}</td>
-            <td>{{p.price}}</td>
-            <td>{{p.selected}}</td>
+      @if (products){
+        <tbody >
+          @for (p of products;track p){
+            <tr>
+              <td>{{p.id}}</td>
+              <td>{{p.name}}</td>
+              <td>{{p.price}}</td>
+              <td>{{p.selected}}</td>
 
-          </tr>
-        }
+            </tr>
+          }
 
-      </tbody>
+        </tbody>
+      }
+
 
     </table>
   </div>
