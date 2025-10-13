@@ -1,16 +1,27 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-product',
-  imports: [],
+  imports: [
+    NgIf
+  ],
   templateUrl: './product.html',
   styleUrl: './product.css',
   standalone:true
 })
-export class Product {
-  products=[
-    {id:1,name:"Computer",price:2300,selected:true},
-    {id:2,name:"Printer",price:1220,selected:false},
-    {id:3,name:"Smart Phone",price:3000,selected:true},
-  ]
+export class Product implements OnInit{
+  products:Array<any>;
+  constructor() {
+  }
+
+  ngOnInit(): void {
+    this.products=[
+      {id:1,name:"Computer",price:2300,selected:true},
+      {id:2,name:"Printer",price:1220,selected:false},
+      {id:3,name:"Smart Phone",price:3000,selected:true},
+    ]
+
+    }
+
 }

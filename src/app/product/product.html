@@ -15,7 +15,7 @@
 
 
       </thead>
-      <tbody>
+      <tbody *ngIf="products">
         @for (p of products;track p){
           <tr>
             <td>{{p.id}}</td>
