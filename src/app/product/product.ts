@@ -11,7 +11,10 @@ import {NgIf} from '@angular/common';
   standalone:true
 })
 export class Product implements OnInit{
-  products:Array<any>;
+  //products!:Array<any>;
+  //products:Array<any>=[];
+
+  products:any;
   constructor() {
   }
 
@@ -24,4 +27,13 @@ export class Product implements OnInit{
 
     }
 
+
+  handeleDelete(product: any) {
+    let v=confirm("voulez vous supprimer?");
+    if(v==true){
+      this.products=this.products.filter((p:any)  =>p.id!=product.id);
+
+    }
+
+  }
 }
