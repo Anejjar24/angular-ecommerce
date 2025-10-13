@@ -15,24 +15,46 @@ export class Product implements OnInit{
   //products!:Array<any>;
   //products:Array<any>=[];
 
-  products:any;
+  products!:any;
   constructor(private productService:ProductService  ) {
   }
 
   ngOnInit(): void {
-       this.products=this.productService.getAllProducts();
+    this.getAllProducts();
+
     }
 
 
     getAllProducts(){
-        this.products=this.productService.getAllProducts();
-    }
+      this.productService.getAllProducts().subscribe(
+        {
+          next:
+            resp => {
+              this.products=resp;
+            },
+          error:err => {
+            console.log(err);
+
+          }
+        }
+      );    }
 
   handeleDelete(product: any) {
     let v=confirm("voulez vous supprimer?");
     if(v==true){
-this.productService.deleteProduct(product);
-this.getAllProducts();
+this.productService.deleteProduct(product).subscribe(
+  {
+    next:value => {
+      this.getAllProducts();
+
+    }
+    ,error:
+    err => {
+      console.log(err);
+
+    }
+  }
+);
     }
 
   }
