@@ -9,15 +9,7 @@ Elle utilise :
 - Une page Home
 - Une page Products (liste + suppression)
 
-## Structure principale
 
-src/app/
-
-home/
-products/
-services/
-app.component.ts
-app-routing.module.ts
 
 ## Product Service
 
