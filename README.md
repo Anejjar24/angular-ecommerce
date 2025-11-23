@@ -53,6 +53,3 @@ Application de démonstration pour comprendre :
 - La structure d’une application Angular simple
 """
 
-convert_text(content, 'md', format='md', outputfile='/mnt/data/README.md', extra_args=['--standalone'])
-
-"/mnt/data/README.md"
