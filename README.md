@@ -1,59 +1,58 @@
-# FirstAngular
+# FirstAngular – Demo Product App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.5.
+Cette application est une **démo Angular simple** permettant d’afficher et de gérer des produits à partir d’une API backend.
 
-## Development server
+Elle utilise :
+- Angular (v20+)
+- HttpClient
+- Un ProductService pour communiquer avec l’API
+- Une page Home
+- Une page Products (liste + suppression)
 
-To start a local development server, run:
+## Structure principale
 
-```bash
+src/app/
+
+home/
+products/
+services/
+app.component.ts
+app-routing.module.ts
+
+## Product Service
+
+Le service communique avec le backend à l’adresse :
+
+http://localhost:8083/products
+
+Fonctions disponibles :
+- Récupérer tous les produits
+- Supprimer un produit par son id
+
+## Lancer l'application
+
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Puis ouvrir : http://localhost:4200/
 
-## Code scaffolding
+Le backend doit être lancé sur le port 8083.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Fonctionnalités
 
-```bash
-ng generate component component-name
-```
+- Page d’accueil
+- Liste des produits
+- Suppression de produits
+- Architecture simple
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Objectif
 
-```bash
-ng generate --help
-```
+Application de démonstration pour comprendre :
+- Les services Angular
+- Les appels API REST
+- Le routing
+- La structure d’une application Angular simple
+"""
 
-## Building
+convert_text(content, 'md', format='md', outputfile='/mnt/data/README.md', extra_args=['--standalone'])
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+"/mnt/data/README.md"
